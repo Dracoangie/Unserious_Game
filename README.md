@@ -1,4 +1,4 @@
-# -Unserious_Game
+# Unserious Game Jam
 > <p> Additional Note: This game has been developed for a game jam </p>
 
 # Index
