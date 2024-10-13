@@ -4,7 +4,7 @@
 # Index
 * [Project Objective](#project-objective)
 * [Game Overview](#game-overview)
-* [Key Features:](#key-features)
+* [Key Features](#key-features)
 
 ## Project Objective
 The primary aim of this project is to create an engaging and fun local multiplayer experience, featuring dynamic gameplay that allows players to interact and compete in a playful office environment.
