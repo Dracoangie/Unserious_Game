@@ -4,27 +4,16 @@ using UnityEngine;
 
 public class MovimientoAdelanteAtras : MonoBehaviour
 {
-    public float velocidadMovimiento = 5f;
-    public float rangoMovimiento = 5f;
     public float VelocidadNecesariaDelObjeto = 15f;
     public float factorDeEscalaDetencion = 0.1f;
+    public CharacterMove jugador; 
     private bool estaDetenido = false;
-    private Vector3 posicionInicial;
-    private float tiempoDesdeInicio;
 
     void Start()
     {
-        posicionInicial = transform.position;
-        tiempoDesdeInicio = 0f;
-    }
-
-    void Update()
-    {
-        if (!estaDetenido)
+        if (jugador == null)
         {
-            tiempoDesdeInicio += Time.deltaTime;
-            float movimiento = Mathf.Sin(tiempoDesdeInicio * velocidadMovimiento) * rangoMovimiento;
-            transform.position = new Vector3(transform.position.x, transform.position.y, posicionInicial.z + movimiento);
+            jugador = FindObjectOfType<CharacterMove>();
         }
     }
 
@@ -41,7 +30,20 @@ public class MovimientoAdelanteAtras : MonoBehaviour
     private System.Collections.IEnumerator DetenidoCoroutine(float tiempoDetenido)
     {
         estaDetenido = true;
+
+        if (jugador != null)
+        {
+            jugador.ToggleControl(false);
+            Debug.Log("Control desactivado");
+        }
+
         yield return new WaitForSeconds(tiempoDetenido);
+        if (jugador != null)
+        {
+            jugador.ToggleControl(true);
+            Debug.Log("Control activado");
+        }
+
         estaDetenido = false;
     }
 }
