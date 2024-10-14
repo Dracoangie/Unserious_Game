@@ -507,6 +507,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2571344170448227424, guid: 5d9838f0f90744b41a0cecb9210afc8c, type: 3}
+      propertyPath: angRotSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571344170448227424, guid: 5d9838f0f90744b41a0cecb9210afc8c, type: 3}
       propertyPath: deceleration
       value: 10
       objectReference: {fileID: 0}
@@ -1350,6 +1354,10 @@ PrefabInstance:
     - target: {fileID: 2571344170448227424, guid: 5d9838f0f90744b41a0cecb9210afc8c, type: 3}
       propertyPath: moveSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571344170448227424, guid: 5d9838f0f90744b41a0cecb9210afc8c, type: 3}
+      propertyPath: angRotSpeed
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 2571344170448227424, guid: 5d9838f0f90744b41a0cecb9210afc8c, type: 3}
       propertyPath: deceleration
