@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Empujon
   - Lanzable
+  - Suelo
   layers:
   - Default
   - TransparentFX

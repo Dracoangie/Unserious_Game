@@ -47,8 +47,6 @@ public class CharacterMove : MonoBehaviour
                 float tiltZ = Mathf.Abs(input.x) * angRotSpeed;
 
                 targetRotation *= Quaternion.Euler(tiltX + tiltZ, 0, 0);
-                Debug.Log(targetRotation);
-
 
                 rig.rotation = Quaternion.Slerp(rig.rotation, targetRotation, rotSpeed * Time.fixedDeltaTime);
             }
