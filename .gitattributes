@@ -1,0 +1,12 @@
+# Normaliza los finales de línea para todos los archivos de texto
+* text=auto
+
+# Especifica que los archivos .meta son de texto
+*.meta text
+
+# Los archivos binarios deben mantenerse sin modificaciones
+*.png binary
+*.jpg binary
+*.fbx binary
+*.mp3 binary
+*.wav binary
