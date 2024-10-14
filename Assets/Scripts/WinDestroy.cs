@@ -23,7 +23,11 @@ public class WinDestroy : MonoBehaviour
                 gameManager.AgregarPunto();
                 gameManager.RalentizarTiempo(tiempoRalentizacion, factorRalentizacion); // Ralentizar el tiempo
             }
-
+            CameraFollowTwoPlayers camara = FindObjectOfType<CameraFollowTwoPlayers>();
+            if (camara != null)
+            {
+                camara.HacerZoomEnExplosion(transform.position);
+            }
             // Reemplazar el objeto actual con fragmentos
             RomperEnFragmentos();
 
