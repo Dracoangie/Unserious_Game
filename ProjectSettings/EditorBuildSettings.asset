@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PlayScene.unity
+    guid: 678945fbeb522b14f9ac2332110b289f
+  - enabled: 1
+    path: Assets/Scenes/SquirrelGame.unity
+    guid: 748f1ca6c7afa8747abe91ee78d7c103
   m_configObjects: {}
