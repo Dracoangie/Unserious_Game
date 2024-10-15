@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
     public CharacterMove jugador2;
 
     public Transform puntosArdillaContainer;
+    public Transform puntosEmpresarioContainer;
     public GameObject puntoArdillaPrefab;
+    public GameObject puntoEmpresarioPrefab;
 
     private void Update()
     {
@@ -48,13 +50,32 @@ public class GameManager : MonoBehaviour
     public void AgregarPunto2()
     {
         puntosEmpresario++;
+        ActualizarPuntosEmrpesario();
     }
 
     private void ActualizarPuntosArdilla()
     {
+        foreach (Transform child in puntosArdillaContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
         for (int i = 0; i < Mathf.Min(puntosArdilla, puntosWinArdilla); i++)
         {
             Instantiate(puntoArdillaPrefab, puntosArdillaContainer);
+        }
+    }
+
+    private void ActualizarPuntosEmrpesario()
+    {
+        foreach (Transform child in puntosEmpresarioContainer)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < Mathf.Min(puntosEmpresario, puntosWinEmpresario); i++)
+        {
+            Instantiate(puntoEmpresarioPrefab, puntosEmpresarioContainer);
         }
     }
 
