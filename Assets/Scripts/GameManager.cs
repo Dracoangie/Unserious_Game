@@ -8,19 +8,27 @@ public class GameManager : MonoBehaviour
 {
     public int puntosArdilla = 0;
     public int puntosEmpresario = 0;
+
+    public int puntosWinArdilla = 5;
+    public int puntosWinEmpresario = 3;
+
     public Image hudImageAr;
     public Image hudImageEm;
     public CharacterMove jugador1;
     public CharacterMove jugador2;
 
+    public Transform puntosArdillaContainer;
+    public GameObject puntoArdillaPrefab;
+
     private void Update()
     {
-        if(puntosArdilla >= 5 || puntosEmpresario >= 3)
+        if (puntosArdilla >= puntosWinArdilla || puntosEmpresario >= puntosWinEmpresario)
         {
-            if (hudImageAr != null && puntosArdilla >= 5)
+            if (hudImageAr != null && puntosArdilla >= puntosWinArdilla)
             {
                 hudImageAr.gameObject.SetActive(true);
-            }else if(hudImageEm != null && puntosEmpresario >= 3)
+            }
+            else if (hudImageEm != null && puntosEmpresario >= puntosWinEmpresario)
                 hudImageEm.gameObject.SetActive(true);
 
             if (jugador1 != null && jugador2 != null)
@@ -30,14 +38,26 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     public void AgregarPunto()
     {
         puntosArdilla++;
+        ActualizarPuntosArdilla();
     }
+
     public void AgregarPunto2()
     {
         puntosEmpresario++;
     }
+
+    private void ActualizarPuntosArdilla()
+    {
+        for (int i = 0; i < Mathf.Min(puntosArdilla, puntosWinArdilla); i++)
+        {
+            Instantiate(puntoArdillaPrefab, puntosArdillaContainer);
+        }
+    }
+
     public void RalentizarTiempo(float tiempoRalentizacion, float factorRalentizacion)
     {
         StartCoroutine(RalentizarCoroutine(tiempoRalentizacion, factorRalentizacion));
