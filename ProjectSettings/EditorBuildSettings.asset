@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SquirrelGame.unity
+    guid: 748f1ca6c7afa8747abe91ee78d7c103
+  - enabled: 1
     path: Assets/Scenes/PlayScene.unity
     guid: 678945fbeb522b14f9ac2332110b289f
   - enabled: 1
-    path: Assets/Scenes/SquirrelGame.unity
-    guid: 748f1ca6c7afa8747abe91ee78d7c103
+    path: Assets/Scenes/Humano.unity
+    guid: 923100224c519cc49ac21a213b9ef3d8
+  - enabled: 1
+    path: Assets/Scenes/Ardilla.unity
+    guid: 98d2ea24cc606d4439f52f6f289d09d3
   m_configObjects: {}

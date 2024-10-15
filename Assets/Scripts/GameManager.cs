@@ -24,14 +24,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+
         if (puntosArdilla >= puntosWinArdilla || puntosEmpresario >= puntosWinEmpresario)
         {
-            if (hudImageAr != null && puntosArdilla >= puntosWinArdilla)
+            if (puntosArdilla >= puntosWinArdilla)
             {
-                hudImageAr.gameObject.SetActive(true);
+                SceneManager.LoadScene("Ardilla");
             }
-            else if (hudImageEm != null && puntosEmpresario >= puntosWinEmpresario)
-                hudImageEm.gameObject.SetActive(true);
+            else if (puntosEmpresario >= puntosWinEmpresario)
+            {
+                SceneManager.LoadScene("Humano");
+            }
 
             if (jugador1 != null && jugador2 != null)
             {
