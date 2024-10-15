@@ -15,6 +15,13 @@ public class ArdillaDash : MonoBehaviour
     private Vector3 direccionDash;
     private Rigidbody rb;
 
+    private audioGameManager audiogameManager;
+
+    private void Awake()
+    {
+        audiogameManager = FindObjectOfType<audioGameManager>();
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -24,6 +31,7 @@ public class ArdillaDash : MonoBehaviour
     {
         if (Input.GetKeyDown(teclaDash) && !estaDashing && puedeHacerDash)
         {
+            audiogameManager.SelectAudio(2, 0.5f);
             StartCoroutine(Dash());
         }
     }

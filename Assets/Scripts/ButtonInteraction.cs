@@ -9,10 +9,13 @@ public class Button3D : MonoBehaviour
     private Renderer objectRenderer;
     public SceneTransition sceneTransition;
 
+    private AudioManager audioManager;
+
     void Start()
     {
         objectRenderer = GetComponent<Renderer>();
         objectRenderer.material = normalMaterial;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void OnMouseEnter()
@@ -28,6 +31,7 @@ public class Button3D : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log("Boton presionado");
+        audioManager.LowerMusic();
         sceneTransition.FadeToScene("PlayScene");
        // SceneManager.LoadScene("SampleScene");
     }

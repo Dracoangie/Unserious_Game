@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
     public Transform puntosEmpresarioContainer;
     public GameObject puntoArdillaPrefab;
     public GameObject puntoEmpresarioPrefab;
+    private audioGameManager audiogameManager;
+
+    private void Awake()
+    {
+        audiogameManager = FindObjectOfType<audioGameManager>();
+    }
 
     private void Update()
     {
@@ -44,6 +50,7 @@ public class GameManager : MonoBehaviour
     public void AgregarPunto()
     {
         puntosArdilla++;
+        audiogameManager.SelectAudio(0, 0.5f);
         ActualizarPuntosArdilla();
     }
 

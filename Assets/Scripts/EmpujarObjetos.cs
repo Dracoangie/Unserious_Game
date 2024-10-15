@@ -7,10 +7,17 @@ public class EmpujarObjetos : MonoBehaviour
     public float fuerzaBase = 100f;
     public float fuerzaVertical = 50f;
     private List<GameObject> objetosEmpujables = new List<GameObject>();
+    private audioGameManager audiogameManager;
+
+    private void Awake()
+    {
+        audiogameManager = FindObjectOfType<audioGameManager>();
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad0) && objetosEmpujables.Count > 0)
         {
+            audiogameManager.SelectAudio(1, 1f);
             foreach (GameObject objetoEmpujable in objetosEmpujables)
             {
                 ResistenciaObjeto resistencia = objetoEmpujable.GetComponent<ResistenciaObjeto>();

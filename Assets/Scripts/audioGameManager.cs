@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class audioGameManager : MonoBehaviour
 {
-    [SerializeField] private AudioClip audioSelect;
+    [SerializeField] private AudioClip[] audios;
+
+    public AudioSource controlAudio;
     public AudioSource musicSource;
-    public AudioSource audioSource;
+
     public float fadeDuration = 1.0f;
     public float maxVolume = 1.0f;
     public float minVolume = 0.0f;
+
+    public void SelectAudio(int index, float volume)
+    {
+        controlAudio.PlayOneShot (audios[index], volume);
+    }
 
     private void Start()
     {
@@ -42,7 +49,6 @@ public class AudioManager : MonoBehaviour
     private IEnumerator FadeOutMusic()
     {
         float currentTime = 0;
-        audioSource.PlayOneShot(audioSelect, 0.5f);
         while (currentTime < fadeDuration)
         {
             currentTime += Time.deltaTime;
