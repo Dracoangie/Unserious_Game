@@ -190,8 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b0d30d90810d8419114008d31a8e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalInput: Horizontal2
-  verticalInput: Vertical2
+  horizontalInput: Horizontal
+  verticalInput: Vertical
   speed: 6
   rotSpeed: 20
   angRotSpeed: 20

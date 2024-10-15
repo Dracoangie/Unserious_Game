@@ -9,7 +9,7 @@ public class EmpujarObjetos : MonoBehaviour
     private List<GameObject> objetosEmpujables = new List<GameObject>();
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && objetosEmpujables.Count > 0)
+        if (Input.GetKeyDown(KeyCode.Keypad0) && objetosEmpujables.Count > 0)
         {
             foreach (GameObject objetoEmpujable in objetosEmpujables)
             {

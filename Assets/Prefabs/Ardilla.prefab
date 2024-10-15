@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b0d30d90810d8419114008d31a8e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalInput: Horizontal
-  verticalInput: Vertical
+  horizontalInput: Horizontal2
+  verticalInput: Vertical2
   speed: 7
   rotSpeed: 20
   angRotSpeed: -20
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashDistancia: 2.5
   dashDuracion: 0.2
-  teclaDash: 256
+  teclaDash: 101
   dashCooldown: 1.5
 --- !u!114 &9153800701889009168
 MonoBehaviour:
